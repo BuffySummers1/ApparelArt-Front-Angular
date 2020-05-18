@@ -1,0 +1,55 @@
+
+<nav class="navbar justify-content-center navbar-expand-lg navbar-light text-dark mb-4">
+    
+    <div>
+        <button class="navbar-toggler" type="button"
+            (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  
+    <div class="collapse navbar-collapse"
+         [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+  
+      </ul>
+
+    </div>
+           
+            <div class="collapse navbar-collapse"
+                 [ngClass]="{ 'show': navbarOpen }">
+
+              <ul class="navbar-nav justify-content-center mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin/category']" routerLinkActive="router-link-active" ><i class="fas fa-cat"></i> Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin/shape']" routerLinkActive="router-link-active" ><i class="fas fa-cut"></i> Shapes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin/color']" routerLinkActive="router-link-active" ><i class="fas fa-rainbow"></i> Colors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/size']" routerLinkActive="router-link-active" ><i class="fas fa-expand-alt"></i> Sizes</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin/gender']" routerLinkActive="router-link-active" ><i class="fas fa-apple-alt"></i> Genders</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin/composition']" routerLinkActive="router-link-active" ><i class="fas fa-leaf"></i> Compositions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin/tag']" routerLinkActive="router-link-active" ><i class="fas fa-tags"></i>Tags</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin/product']" routerLinkActive="router-link-active" ><i class="fas fa-magic"></i> Products</a>
+                </li>
+          
+              </ul>
+            </div>
+
+    </div>
+    
+  </nav>
+
+
