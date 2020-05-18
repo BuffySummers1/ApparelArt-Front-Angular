@@ -1,1 +1,22 @@
-<p>composition-list works!</p>
+<div class="container">
+    <div class="head">
+        <h5 class="titre">
+          <mark class="mark">Composition list</mark>
+        </h5>
+        <div class="col-12 text-right titre titre-btn">
+          <button class="add" type="button" [routerLink]="'/admin/composition/add'"class="btn btn-warning btn-mg">
+            <i class="fas fa-plus"></i> Add a composition</button>
+        </div>
+      </div>
+      <div class="list">
+        <ul class="list-group" *ngFor="let composition of compositions">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ composition.name }}
+            <div>
+                <button class="btn btn-light btn-sm mr-2" [routerLink]="['/admin/composition/edit', composition.id]">Edit</button>
+                <button class="btn btn-dark btn-sm" (click)="deleteComposition(composition.id)">Delete</button>
+            </div>
+          </li>
+        </ul> 
+      </div>
+  </div>

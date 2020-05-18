@@ -1,1 +1,22 @@
-<p>color-list works!</p>
+<div class="container">
+    <div class="head">
+        <h5 class="titre">
+          <mark class="mark">Color list</mark>
+        </h5>
+        <div class="col-12 text-right titre titre-btn">
+          <button class="add" type="button" [routerLink]="'/admin/color/add'"class="btn btn-warning btn-mg">
+            <i class="fas fa-plus"></i> Add a color</button>
+        </div>
+      </div>
+      <div class="list">
+        <ul class="list-group" *ngFor="let color of colors">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ color.name }}
+            <div>
+                <button class="btn btn-light btn-sm mr-2" [routerLink]="['/admin/color/edit', color.id]">Edit</button>
+                <button class="btn btn-dark btn-sm" (click)="deleteColor(color.id)">Delete</button>
+            </div>
+          </li>
+        </ul> 
+      </div>
+  </div>

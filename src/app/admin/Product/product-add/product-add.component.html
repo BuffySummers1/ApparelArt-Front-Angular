@@ -1,1 +1,148 @@
-<p>product-add works!</p>
+<div class="container">
+    <form [formGroup]="form"(ngSubmit)="onSubmit()">
+        <div class="form-group column">
+          <div class="head">
+            <h5 class="titre">
+              <mark class="mark">Add a Gender</mark>
+            </h5>
+          </div>
+          <div>
+            <label>Name</label>
+            <input formControlName="name" type="text" class="form-control" id="name" placeholder="nom" required [ngClass]="{ 'is-invalid': submitted && f.title.errors }" >
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Un nom est requis</div>
+                <div *ngIf="f.name.errors.minlength">Veuillez entrer un minimum de 4 caractères</div>
+            </div>
+          </div>
+          <div>
+            <label>Description</label>
+            <textarea formControlName="description" type="text" class="form-control" id="description" placeholder="description" required></textarea>
+          </div>
+          <div>
+            <label>Category</label>
+            <select formControlName="CategoryId" class="form-control">
+                <option [ngValue]="null" disabled>Choose your category</option>
+                <option *ngFor="let category of categories" [ngValue]="category.id">
+                 {{ category.name }}
+                </option>
+              </select> 
+          </div>
+        </div>
+      <button class="btn btn-outline-secondary btn-sm">Save</button>
+    </form>
+    
+    
+  
+  
+  
+  
+  
+
+
+
+
+
+    <!--
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h5 class="titre">
+              <mark class="mark">Add a Gender</mark>
+            </h5>
+        </div>
+        
+        <div class="col-12 text-center">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="text" name="name" formControlName="name" class="w-100"> <br>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Description</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="text" name="description" formControlName="description" class="w-100"> <br>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Price</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="number" name="price" formControlName="price" class="w-100"> <br>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Stock max</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="number" name="stockMax" formControlName="stockMax" class="w-100"> <br>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Category</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <select formControlName="CategoryId" class="form-control">
+                            <option [ngValue]="null" disabled>Choose your category</option>
+                            <option *ngFor="let category of categories" [ngValue]="category.id">
+                             {{ category.name }}
+                            </option>
+                          </select> 
+                          <br>                    
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <select formControlName="ColorId" class="w-100">
+                            <option [ngValue]="null" disabled>Choose your color</option>
+                            <option *ngFor="let color of colors" [ngValue]="color.id">
+                             {{ color.name }}
+                            </option>
+                          </select> 
+                          <br>                    
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <select formControlName="GenderId" class="w-100">
+                            <option [ngValue]="null" disabled>Choose your gender</option>
+                            <option *ngFor="let gender of genders" [ngValue]="gender.id">
+                             {{ gender.name }}
+                            </option>
+                          </select> 
+                          <br>                    
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <select formControlName="ShapeId" class="w-100">
+                            <option [ngValue]="null" disabled>Choose your shape</option>
+                            <option *ngFor="let shape of shapes" [ngValue]="shape.id">
+                             {{ shape.name }}
+                            </option>
+                          </select> 
+                          <br>                    
+                    </div>
+                </div>
+                
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Picture</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="file" (change)="onFileChanged($event)" formControlName="picture" name="picture" id="picture">
+                    </div>
+                </div>
+              
+                  
+                <button type="submit" class="btn-primary mt-4">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+-->

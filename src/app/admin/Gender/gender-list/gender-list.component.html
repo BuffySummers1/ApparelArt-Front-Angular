@@ -1,1 +1,22 @@
-<p>gender-list works!</p>
+<div class="container">
+    <div class="head">
+        <h5 class="titre">
+          <mark class="mark">Gender list</mark>
+        </h5>
+        <div class="col-12 text-right titre titre-btn">
+          <button class="add" type="button" [routerLink]="'/admin/gender/add'"class="btn btn-warning btn-mg">
+            <i class="fas fa-plus"></i> Add a gender</button>
+        </div>
+      </div>
+      <div class="list">
+        <ul class="list-group" *ngFor="let gender of genders">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ gender.name }}
+            <div>
+                <button class="btn btn-light btn-sm mr-2" [routerLink]="['/admin/gender/edit', gender.id]">Edit</button>
+                <button class="btn btn-dark btn-sm" (click)="deleteGender(gender.id)">Delete</button>
+            </div>
+          </li>
+        </ul> 
+      </div>
+  </div>

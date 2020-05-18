@@ -1,1 +1,22 @@
-<p>tag-list works!</p>
+<div class="container">
+    <div class="head">
+        <h5 class="titre">
+          <mark class="mark">Tag list</mark>
+        </h5>
+        <div class="col-12 text-right titre titre-btn">
+          <button class="add" type="button" [routerLink]="'/admin/tag/add'"class="btn btn-warning btn-mg">
+            <i class="fas fa-plus"></i> Add a tag</button>
+        </div>
+      </div>
+      <div class="list">
+        <ul class="list-group" *ngFor="let tag of tags">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ tag.name }}
+            <div>
+                <button class="btn btn-light btn-sm mr-2" [routerLink]="['/admin/tag/edit', tag.id]">Edit</button>
+                <button class="btn btn-dark btn-sm" (click)="deleteTag(tag.id)">Delete</button>
+            </div>
+          </li>
+        </ul> 
+      </div>
+  </div>

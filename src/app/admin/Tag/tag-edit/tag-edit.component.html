@@ -1,1 +1,18 @@
-<p>tag-edit works!</p>
+<div class="container">
+    <form [formGroup]="form"(ngSubmit)="onSubmit()">
+        <div class="form-group column">
+          <div class="head">
+            <h5 class="titre">
+              <mark class="mark">Update a Tag</mark>
+            </h5>
+          </div>
+        <input formControlName="name" type="text" class="form-control" id="tag" placeholder="Tag ex: sweat" required>
+        </div>
+      <button class="btn btn-outline-secondary btn-sm">Save</button>
+    </form>
+    
+  
+  
+  
+  
+  

@@ -60,13 +60,4 @@ export class ColorService {
             catchError(this.errorService.handleError('deleteColor'))
           );
       }
-
-      // ** Get Colors Count
-  getCount(): Observable<any[]> {
-    return this.http.get<any[]>(env.apiUrl + 'colors/count')
-    .pipe(
-      tap(data => data),
-      catchError(this.errorService.handleError('getColors', []))
-    );
-  }
 }

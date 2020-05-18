@@ -1,1 +1,22 @@
-<p>size-list works!</p>
+<div class="container">
+    <div class="head">
+        <h5 class="titre">
+          <mark class="mark">Size list</mark>
+        </h5>
+        <div class="col-12 text-right titre titre-btn">
+          <button class="add" type="button" [routerLink]="'/admin/size/add'"class="btn btn-warning btn-mg">
+            <i class="fas fa-plus"></i> Add a size</button>
+        </div>
+      </div>
+      <div class="list">
+        <ul class="list-group" *ngFor="let size of sizes">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ size.name }}
+            <div>
+                <button class="btn btn-light btn-sm mr-2" [routerLink]="['/admin/size/edit', size.id]">Edit</button>
+                <button class="btn btn-dark btn-sm" (click)="deleteSize(size.id)">Delete</button>
+            </div>
+          </li>
+        </ul> 
+      </div>
+  </div>

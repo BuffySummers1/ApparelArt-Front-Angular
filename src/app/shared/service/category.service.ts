@@ -14,7 +14,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient, private errorService: ErrorService) { }
 
-  // ** Get Categories
+  // Get  All Categories 
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(env.apiUrl + 'categories')
     .pipe(
@@ -32,7 +32,7 @@ export class CategoryService {
     );
   }
 
-  // ** Get Category
+  // Get One Category
   getCategoryDetail(id: number): Observable<Category> {
     return this.http.get<any>(env.apiUrl + 'categories/' + id)
     .pipe(
@@ -41,7 +41,7 @@ export class CategoryService {
     );
   }
 
-  // POST :  Add a category
+  // POST 
   addCategory(category: Category): Observable<Category> {
     return this.http.post<Category>(env.apiUrl + 'categories/add', category, {responseType: 'json'})
     .pipe(
@@ -50,7 +50,7 @@ export class CategoryService {
       );
   }
 
-  // PUT :  Edit a category
+  // PUT 
   editCategory(category: Category, id: number): Observable<Category> {
     return this.http.put<Category>(env.apiUrl + 'categories/edit/' + id, category, {responseType: 'json'})
     .pipe(
@@ -59,7 +59,7 @@ export class CategoryService {
       );
   }
 
-      /** DELETE: delete one category */
+      // DELETE
       deleteCategory(id: string): Observable<Category> {
         const url = env.apiUrl + 'categories/delete/' + id;
         return this.http.delete<any>(url)

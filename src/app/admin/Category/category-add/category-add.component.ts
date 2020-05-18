@@ -21,7 +21,7 @@ export class CategoryAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      name : ['', [Validators.required]],
+      name : ['', [Validators.required, Validators.maxLength(100)]],
     });
 
   }
